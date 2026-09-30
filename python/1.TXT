@@ -1,0 +1,24 @@
+# Setup Python, VS Code, Git + GitHub, venv. Variables, types, input/output, operators
+Part 1 — Python Fundamentals
+Variables
+Data types
+Input
+Output
+Operators
+Type conversion
+Strings
+Conditional statements
+Loops
+Functions
+Lists, tuples, sets, dictionaries
+File handling
+Exceptions
+Modules/packages
+
+Part 2 — Python Environment
+What is Python environment?
+pip
+venv
+Creating/activating/deactivating environments
+requirements.txt
+Why virtual environments matter
