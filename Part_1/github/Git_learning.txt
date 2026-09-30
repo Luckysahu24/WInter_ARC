@@ -1,0 +1,380 @@
+Creating a Git Repository
+--> git init , Git creates a hidden: .git/
+
+Check Repository Status --> git status
+
+Staging -->  Tell Git which files you want in the next commit:
+-->  git add file_name  or git add . ( for all files)
+
+Commit --> A commit is essentially a saved checkpoint.
+--> git commit -m "Add initial Message"
+
+Git's Three Important Areas
+┌─────────────────────┐
+│ Working Directory   │
+│                     │
+│ Your actual files   │
+└──────────┬──────────┘
+           │
+        git add
+           ↓
+┌─────────────────────┐
+│ Staging Area        │
+│                     │
+│ Files for next      │
+│ commit              │
+└──────────┬──────────┘
+           │
+       git commit
+           ↓
+┌─────────────────────┐
+│ Git Repository      │
+│                     │
+│ Saved history       │
+└─────────────────────┘
+
+View History --> git log
+Or the compact version: git log --oneline
+
+.gitignore --> Ignore the files and directory form being pushed into the Repository
+
+Branches:What is a branch?
+A branch is an independent line of development inside a Git repository.
+main  is your main/stable branch.
+ │
+ ●───●───●
+         ↑
+       latest
+
+Instead of directly changing main, you create:
+main
+ │
+ ●───●───●
+         \
+          ●───●───●
+               ↑
+          feature-login
+
+
+Checking Your Current Branch: 
+git branch
+
+Creating a Branch
+git branch feature-login
+This creates the branch but does not switch to it.
+
+Switching to a Branch
+
+Old/common command: git checkout feature-login
+
+Moder commnad
+Switching to a Branch:  git switch feature-login
+
+Create + Switch in One Command: Create + Switch in One Command
+
+main
+ │
+ ●───●
+      \
+       ●───●
+            ↑
+      feature-login
+
+Merge
+you have
+
+main:
+A ─── B ─── C
+
+and
+
+feature-login:
+A ─── B ─── C ─── D ─── E
+you want to bring your feature into main 
+
+Important Rule: 
+If you want to merge  feature-login into main 
+you first switch to main : then 
+merge --> git switch man 
+git merge feature-login 
+
+             feature-login
+                  │
+             D ─── E
+                  │
+                  ↓
+main ─── A ─── B ─── C
+                  │
+                merge
+                  ↓
+             main contains
+             feature-login
+
+What does GITHUB Look LIKE ? 
+
+GitHub Repository
+
+main
+ │
+ ├── commits
+ │
+ └── stable code
+
+feature-login
+ │
+ ├── commits
+ │
+ └── login development
+
+Pull Request : commonly called PR means : i've made changes in my branch please review them and consider merging them into another branch 
+
+For example:
+feature-login
+      │
+      │ Pull Request
+      ↓
+     main
+
+A teammate can review your code.
+
+They might:
+
+. comment
+. request changes
+. approve
+. merge
+
+
+Merge Conflicts:A merge conflict happens when Git cannot automatically decide which changes should be kept.
+
+What Does a Conflict Look Like?
+Git may modify the file like this:
+<<<<<<< HEAD
+print("Hello NITK")
+=======
+print("Hello Laxminarayan")
+>>>>>>> feature-login
+
+<<<<<<< The version from your current branch 
+======= Separator 
+>>>>>>> Incoming branch's version
+
+How Do You Resolve It?
+You mannualy decide what final code should be
+
+Collaboration Workflow
+
+                 GitHub
+                    │
+                 main
+                    │
+       ┌────────────┼────────────┐
+       ↓            ↓            ↓
+   Laxminarayan    Jeny        Mahek
+   feature-A      feature-B    feature-C
+1. clone main 
+2. create your own branch make changes 
+3. push in your branch 
+4. create Pull request 
+5. Once approved it wil be merged by the admin 
+then in main git pull to get the local update 
+
+
+
+GITHUB --> typicall Workflow
+Create project
+     ↓
+python -m venv .venv
+     ↓
+Write Python code
+     ↓
+git init
+     ↓
+git add .
+     ↓
+git commit
+     ↓
+Create GitHub repository
+     ↓
+git remote add origin ...
+     ↓
+git push
+
+after that normal workflow 
+
+Modify code
+    ↓
+git status
+    ↓
+git add .
+    ↓
+git commit -m "message"
+    ↓
+git push
+
+git remote --> Connects your local repository to GitHub
+
+git git remote add origin <repository-url>
+Check : git remote -v 
+
+Push  --> local commits will be pushed with this commnads
+git push -u origin main
+
+
+Clone :Suppose a project already exists on GitHub and you want to download 
+git clone <repository-url>
+
+Pull : Suppose your teammate changed the GitHub repository.You want those changes:
+git pull
+
+GitHub
+   ↓
+git pull
+   ↓
+Your computer
+
+Push vs Pull
+push = local → GitHub
+pull = GitHub → local
+
+The Complete Mental Model
+                    GITHUB
+                       ▲
+                       │
+                     push
+                       │
+              ┌────────┴────────┐
+              │   Git Repository │
+              │    (local)       │
+              └────────▲────────┘
+                       │
+                    commit
+                       │
+              ┌────────┴────────┐
+              │  Staging Area    │
+              └────────▲────────┘
+                       │
+                     add
+                       │
+              ┌────────┴────────┐
+              │ Working Directory│
+              │                  │
+              │ main.py          │
+              │ requirements.txt │
+              │ .gitignore       │
+              └──────────────────┘
+                       │
+                       │
+                     .venv
+              ┌──────────────────┐
+              │ Isolated Python  │
+              │ Environment      │
+              │                  │
+              │ pandas           │
+              │ numpy            │
+              │ sklearn          │
+              └──────────────────┘
+
+
+
+                               GitHub
+                    │
+                    │ clone
+                    ↓
+              Local repository
+                    │
+                    ↓
+                  main
+                    │
+                  pull
+                    │
+                    ↓
+          Create feature branch
+                    │
+                    ↓
+             Write your code
+                    │
+                    ↓
+                git add
+                    │
+                    ↓
+              git commit
+                    │
+                    ↓
+                git push
+                    │
+                    ↓
+              GitHub branch
+                    │
+                    ↓
+             Pull Request
+                    │
+              ┌─────┴─────┐
+              │           │
+           Review       Conflict?
+              │           │
+              │      Resolve locally
+              │           │
+              └─────┬─────┘
+                    ↓
+                  Merge
+                    ↓
+                   main
+                    │
+                    ↓
+              git pull
+
+
+Delete the branch :
+Git normally won't delete the branch if it contains commits that haven't been merged somewhere Git considers safely integrated.
+
+git branch -d feature-login
+
+t does not necessarily delete the branch from GitHub.
+
+To delete the remote GitHub branch:
+git push origin --delete feature-login 
+
+
+git diff: what exaclty did i change in my files?
+
+git diff --staged: what exaclty am i about to commit ? 
+
+git restore: Usefull when you make a mistake 
+git restore filename.py -->can discard unstaged changes to that file.
+
+git restore --staged filename.py --> which removes a file from the stagging areas without deleting your working copy.
+
+Undoing commits
+git commit --amend
+and 
+git revert  <commit>
+
+Remote branches
+Inspect remote branches 
+
+git branch -r
+Local:
+main
+feature-login
+
+git branch -a
+Remote:
+origin/main
+origin/feature-login
+
+in Git push -u origin main 
+-u establishes an upstream/ tracking relationship 
+
+But for practical GitHub knowledge, also learn:
+
+PR comments
+review
+request changes
+approve
+merge
+close PR
+branch protection
+why direct pushes to main are often restricted
+
+     

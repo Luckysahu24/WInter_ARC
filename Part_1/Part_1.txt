@@ -1,0 +1,49 @@
+# Setup Python, VS Code, Git + GitHub, venv. Variables, types, input/output, operators
+Part 1 — Python Fundamentals
+[X] Variables
+[X] Data types
+[X] Input
+[X] Output
+[X] Operators
+[X] Type conversion
+[X] Strings
+[X] Conditional statements
+[X] Loops
+[X] Functions
+[X] Lists, tuples, sets, dictionaries
+[X] File handling
+[X] Exceptions
+[X] Modules/packages
+
+Part 2 — Python Environment
+[x] What is Python environment?
+[x] pip 
+[x] venv
+[x] Creating/activating/deactivating environments
+[x] requirements.txt
+[x] Why virtual environments matter
+
+Part 3 — Git
+[X] What Git is
+[X] Repository
+[X] Working directory / staging area / repository
+[X] git init
+[X] git status
+[X] git add
+[X] git commit
+[X] git log
+[X] .gitignore
+[X] Branches
+[X] Merge
+[X] Conflict resolution
+
+Part 4 — GitHub
+[X] GitHub vs Git
+[X] Creating a repository
+[X] Connecting local project to GitHub
+[X] git remote
+[X] git push
+[X] git pull
+[X] git clone
+[X] Pull requests
+[X] Collaboration workflow

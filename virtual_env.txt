@@ -1,4 +1,24 @@
 create their own Virtual Environment
 --> A virtual environment gives each project its own isolated Python environment.
 python -m venv .venv
+
+PIP For Installing Packages
+For Installing Packages
+pip list 
+pip show pandas 
+
 pip install -r requirements.txt
+
+deactivate command for deactivating the venv
+
+requirements.txt
+suppose your project uses: 
+numpy
+pandas
+scikit-learn
+matplotlib
+
+dependency list
+pip freeze > requirements.txt
+
+Someone else can recreate the environment using:Someone else can recreate the environment using:
