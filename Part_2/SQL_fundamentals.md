@@ -219,4 +219,76 @@ LIMIT 3;
 SELECT *
 FROM students
 ORDER BY cgpa DESC
-LIMIT 3;```
+LIMIT 3;
+```
+
+# 1. NOT 
+WHERE NOT department = 'IT';  
+WHERE department <> 'IT';  
+WHERE department != 'IT';
+
+# 2. IN
+``` 
+SELECT *
+FROM students
+WHERE department IN ('IT', 'CSE');
+``` 
+
+# 3. NOT IN
+
+```
+SELECT *
+FROM students
+WHERE department NOT IN ('IT', 'CSE');
+```
+
+# 4. BETWEEN
+### BETWEEN is inclusive.
+```
+SELECT *
+FROM students
+WHERE cgpa BETWEEN 8.0 AND 9.0;
+
+Means: 
+>= 8.0
+AND
+<= 9.0
+```
+# 5. NOT BETWEEN
+### CGPA is outside the range 8.0–9.0.
+```
+SELECT *
+FROM students
+WHERE cgpa NOT BETWEEN 8.0 AND 9.0;
+```
+
+# 6. NULL
+### It means the value is missing/unknown/not provided, depending on the data context.
+
+# 7. IS NULL
+```
+SELECT *
+FROM students
+WHERE city IS NULL;
+
+and For Non-NULL
+
+SELECT *
+FROM students
+WHERE city IS NOT NULL;
+``` 
+### Never use = NULL or != NULL to test for NULL.
+
+# 8. Operator precedence
+### When mixing AND and OR, use parentheses. 
+
+# 9. NOT LIKE
+WHERE name NOT LIKE 'A%';
+
+# 10. OFFSET 
+```
+SELECT *
+FROM students
+ORDER BY cgpa DESC
+LIMIT 3 OFFSET 3;
+```  
