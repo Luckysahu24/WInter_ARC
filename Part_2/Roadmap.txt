@@ -1,0 +1,70 @@
+PHASE 1 — FOUNDATIONS
+│
+├── Database concepts
+├── Tables
+├── Rows / Columns
+├── Data types
+└── Primary keys
+        ↓
+PHASE 2 — BASIC QUERIES
+│
+├── SELECT
+├── WHERE
+├── DISTINCT
+├── LIKE
+├── ORDER BY
+└── LIMIT
+        ↓
+PHASE 3 — CONDITIONS
+│
+├── AND
+├── OR
+├── NOT
+├── IN
+├── BETWEEN
+└── IS NULL
+        ↓
+PHASE 4 — AGGREGATION
+│
+├── COUNT
+├── SUM
+├── AVG
+├── MIN
+├── MAX
+├── GROUP BY
+└── HAVING
+        ↓
+PHASE 5 — JOINS
+│
+├── INNER JOIN
+├── LEFT JOIN
+├── RIGHT JOIN
+└── FULL OUTER JOIN
+        ↓
+PHASE 6 — INTERMEDIATE
+│
+├── Subqueries
+├── CASE
+├── COALESCE
+├── UNION
+├── CTEs
+└── Views
+        ↓
+PHASE 7 — ADVANCED
+│
+├── Window Functions
+├── PARTITION BY
+├── ROW_NUMBER
+├── RANK
+├── DENSE_RANK
+└── LAG / LEAD
+        ↓
+PHASE 8 — PROFESSIONAL DATABASE SKILLS
+│
+├── Indexes
+├── Transactions
+├── ACID
+├── Constraints
+├── Normalization
+├── Query optimization
+└── EXPLAIN / EXPLAIN ANALYZE
